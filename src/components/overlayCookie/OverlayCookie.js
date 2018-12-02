@@ -46,8 +46,8 @@ class OverlayCookie extends Component {
 
     return (
       <section className="w-full fixed pin-x pin-b bg-primary-lighter opacity-90 z-alert">
-        <div className="flex justify-between text-secondary-dark text-xs general-alignment">
-          <p className="my-4 leading-normal w-95/100">
+        <div className="container flex justify-between text-secondary-dark text-xs">
+          <p className="my-4 leading-normal w-5/6">
             <Trans id="legal.notification">
               <span>
                 <Button
@@ -61,7 +61,7 @@ class OverlayCookie extends Component {
               </span>
             </Trans>
           </p>
-          <p className="my-4 text-right w-5/100">
+          <p className="my-4 text-right w-1/6">
             <FontAwesomeIcon icon={faTimes} onClick={this.acceptCookies} />
           </p>
         </div>

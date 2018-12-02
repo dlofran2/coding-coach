@@ -110,8 +110,8 @@ module.exports = {
   screens: {
     'sm': '576px',
     'md': '768px',
-    'lg': '1024px',
-    'xl': '1440px',
+    'lg': '992px',
+    'xl': '1200px',
   },
 
 
@@ -407,8 +407,6 @@ module.exports = {
     '4/5': '80%',
     '1/6': '16.66667%',
     '5/6': '83.33333%',
-    '95/100': '95%',
-    '5/100': '5%',
     'full': '100%',
     'screen': '100vw',
   },
@@ -926,49 +924,7 @@ module.exports = {
         base,
       ]);
     },
-    ({ addComponents, config }) => {
-      const screens = config('screens');
 
-      const mediaQueries = Object.keys(screens).map(width => {
-        if (width === 'md') return ({
-          [`@media (min-width: ${screens[width]})`]: {
-            '.general-alignment': {
-              maxWidth: '800px',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              paddingLeft: '2rem',
-              paddingRight: '2rem',
-            },
-          },
-        });
-        else if (width === 'lg') return ({
-          [`@media (min-width: ${screens[width]})`]: {
-            '.general-alignment': {
-              maxWidth: '1200px',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              paddingLeft: '2rem',
-              paddingRight: '2rem',
-            },
-          },
-        });
-        else if (width === 'lg') return ({
-          [`@media (min-width: ${screens[width]})`]: {
-            '.general-alignment': {
-              maxWidth: '1400px',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              paddingLeft: '3rem',
-              paddingRight: '3rem',
-            },
-          },
-        });
-      });
-
-      addComponents([
-        ...mediaQueries
-      ])
-    },
     require('tailwindcss/plugins/container')({
       center: true,
       padding: '1rem',
