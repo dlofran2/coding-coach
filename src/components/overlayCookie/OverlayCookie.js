@@ -3,7 +3,6 @@ import { func } from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Trans } from '@lingui/macro';
-import styles from './overlayCookie.module.scss';
 import Button from 'components/button/Button';
 
 class OverlayCookie extends Component {
@@ -46,9 +45,9 @@ class OverlayCookie extends Component {
     if (cookiesAccepted === true) return null;
 
     return (
-      <section className={styles.cookieWrapper}>
-        <div className={styles.cookieContent}>
-          <p className={styles.cookieText}>
+      <section className="w-full fixed pin-x pin-b bg-primary-lighter opacity-90 z-alert">
+        <div className="flex justify-between text-secondary-dark text-xs general-alignment">
+          <p className="my-4 leading-normal w-95/100">
             <Trans id="legal.notification">
               <span>
                 <Button
@@ -62,7 +61,7 @@ class OverlayCookie extends Component {
               </span>
             </Trans>
           </p>
-          <p className={styles.cookieIcon}>
+          <p className="my-4 text-right w-5/100">
             <FontAwesomeIcon icon={faTimes} onClick={this.acceptCookies} />
           </p>
         </div>
